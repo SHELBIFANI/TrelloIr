@@ -14,7 +14,14 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                Kanit: ['"Kanit"',  ...defaultTheme.fontFamily.sans]
             },
+        },
+        colors: {
+            silvercustom :'#f4f4f4',
+            blue: '#3758f9' ,
+            white: '#fff',
+            
         },
     },
 
