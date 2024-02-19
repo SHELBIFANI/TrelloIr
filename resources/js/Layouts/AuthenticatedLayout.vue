@@ -6,6 +6,7 @@ import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/vue3';
+import SreachBox from '@/Components/SearchBox.vue';
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -31,6 +32,12 @@ const showingNavigationDropdown = ref(false);
                                     Boardes
                                 </NavLink>
                             </div>
+
+                            <SreachBox />
+
+                            <div>
+                                <!-- add search box -->
+                            </div>
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -39,6 +46,8 @@ const showingNavigationDropdown = ref(false);
                                 <Dropdown align="right" width="48">
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
+                                            <img :src="`storage/${$page.props.auth.user.image}`"
+                                                class="h-10 w-10 rounded-full border-2 border-transparent mr-4">
                                             <button type="button"
                                                 class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
                                                 {{ $page.props.auth.user.name }}
