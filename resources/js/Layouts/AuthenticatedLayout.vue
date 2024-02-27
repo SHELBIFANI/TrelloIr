@@ -5,8 +5,8 @@ import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
+import SearchBox from '@/Components/SearchBox.vue';
 import { Link } from '@inertiajs/vue3';
-import SreachBox from '@/Components/SearchBox.vue';
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -16,9 +16,9 @@ const showingNavigationDropdown = ref(false);
         <div class="min-h-screen bg-gray-100">
             <nav class="bg-white border-b border-gray-100">
                 <!-- Primary Navigation Menu -->
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-20xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16 ">
-                        <div class="flex">
+                        <div class="flex items-center justify-around">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center ">
                                 <Link :href="route('dashboard')">
@@ -28,15 +28,13 @@ const showingNavigationDropdown = ref(false);
 
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                                    <img class="w-8" src="@/Svgs/SvgBoard.svg">
-                                    Boardes
+                                    <img class="w-8 mr-1" src="@/Svgs/SvgBoard.svg">
+                                    Boards
                                 </NavLink>
                             </div>
 
-                            <SreachBox />
-
-                            <div>
-                                <!-- add search box -->
+                            <div class="ml-10">
+                                <SearchBox />
                             </div>
                         </div>
 
@@ -46,18 +44,10 @@ const showingNavigationDropdown = ref(false);
                                 <Dropdown align="right" width="48">
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
-                                            <img :src="`storage/${$page.props.auth.user.image}`"
-                                                class="h-10 w-10 rounded-full border-2 border-transparent mr-4">
                                             <button type="button"
-                                                class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                                                {{ $page.props.auth.user.name }}
-
-                                                <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd"
-                                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                        clip-rule="evenodd" />
-                                                </svg>
+                                                class="inline-flex items-center px-3 py-2  leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                                                <img :src="`storage/${$page.props.auth.user.image}`"
+                                                class="h-10 w-10 rounded-full border-2 border-transparent mr-4">
                                             </button>
                                         </span>
                                     </template>
