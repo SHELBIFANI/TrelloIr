@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('task_lables', function (Blueprint $table) {
+        Schema::create('board__lables', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('task_id')->constrained();
+            $table->foreignId('board_id')->constrained();
             $table->foreignId('lable_id')->constrained();
-            $table->unique('task_id', 'lable_id');
+            $table->unique('board_id', 'lable_id');
             $table->timestamps();
         });
     }
@@ -25,6 +25,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('task_lables');
+        Schema::dropIfExists('board__lables');
     }
 };
+
