@@ -26,7 +26,7 @@ const showingNavigationDropdown = ref(false);
                                 </Link>
                             </div>
 
-                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <div class="h-5/6 hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     <img class="w-8 mr-1" src="@/Svgs/SvgBoard.svg">
                                     Boards
@@ -39,6 +39,15 @@ const showingNavigationDropdown = ref(false);
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
+                            <!-- Add new Board and icon notification -->
+                            <div class="flex items-center justify-between">
+                                <Link>
+                                    <img class="w-6 h-6" src="@/Svgs/AddBoard.svg">
+                                </Link>
+                                <Link>
+                                    <img class="w-6 h-6 ml-2" src="@/Svgs/Notification.svg">
+                                </Link>
+                            </div>
                             <!-- Settings Dropdown -->
                             <div class="ms-3 relative">
                                 <Dropdown align="right" width="48">
@@ -47,7 +56,7 @@ const showingNavigationDropdown = ref(false);
                                             <button type="button"
                                                 class="inline-flex items-center px-3 py-2  leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
                                                 <img :src="`storage/${$page.props.auth.user.image}`"
-                                                class="h-10 w-10 rounded-full border-2 border-transparent mr-4">
+                                                    class="h-10 w-10 rounded-full border-2 border-transparent mr-4">
                                             </button>
                                         </span>
                                     </template>
