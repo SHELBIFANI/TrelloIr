@@ -13,7 +13,7 @@ const showingNavigationDropdown = ref(false);
 
 <template>
     <div>
-        <div class="min-h-screen bg-gray-100">
+        <div class="h-auto bg-gray-100">
             <nav class="bg-white border-b border-gray-100">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-20xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,7 +41,7 @@ const showingNavigationDropdown = ref(false);
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
                             <!-- Add new Board and icon notification -->
                             <div class="flex items-center justify-between">
-                                <Link>
+                                <Link :href="route('boards.create')">
                                     <img class="w-6 h-6" src="@/Svgs/AddBoard.svg">
                                 </Link>
                                 <Link>
@@ -55,7 +55,7 @@ const showingNavigationDropdown = ref(false);
                                         <span class="inline-flex rounded-md">
                                             <button type="button"
                                                 class="inline-flex items-center px-3 py-2  leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                                                <img :src="`storage/${$page.props.auth.user.image}`"
+                                                <img :src="`../storage/${$page.props.auth.user.image}`"
                                                     class="h-10 w-10 rounded-full border-2 border-transparent mr-4">
                                             </button>
                                         </span>
