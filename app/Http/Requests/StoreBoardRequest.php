@@ -11,7 +11,7 @@ class StoreBoardRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class StoreBoardRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|min:5|max:255',
+            'color' => 'required|string|min:10|max:255',
+            'description' => 'nullable|string|max:255',
         ];
     }
 }
