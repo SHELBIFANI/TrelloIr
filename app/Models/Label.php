@@ -20,9 +20,9 @@ class Label extends Model
         return $this->belongsTo(Board::class);
     }
 
-    public function taskLables()
+    public function taskLabels()
     {
-        return $this->hasMany(TaskLable::class);
+        return $this->hasMany(TaskLabel::class);
     }
     
     public function tasks()

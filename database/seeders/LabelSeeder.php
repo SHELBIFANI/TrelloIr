@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Lable;
+use App\Models\Label;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class LableSeeder extends Seeder
+class LabelSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -23,7 +23,7 @@ class LableSeeder extends Seeder
         ];
         
         foreach ($colors as $color => $name) {
-            Lable::create([
+            Label::create([
                 'title' => $name,
                 'color' => $color,
             ]);

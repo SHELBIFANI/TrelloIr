@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('board__lables', function (Blueprint $table) {
+        Schema::create('board_labels', function (Blueprint $table) {
             $table->id();
             $table->foreignId('board_id')->constrained();
-            $table->foreignId('lable_id')->constrained();
-            $table->unique('board_id', 'lable_id');
+            $table->foreignId('label_id')->constrained();
+            $table->unique('board_id', 'label_id');
             $table->timestamps();
         });
     }
@@ -25,7 +25,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('board__lables');
+        Schema::dropIfExists('board_labels');
     }
 };
 
