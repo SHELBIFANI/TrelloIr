@@ -50,13 +50,13 @@ function submit() {
                                         <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
                                         <textarea id="description" name="description" v-model="form.description" rows="3"
                                             class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></textarea>
-                                        <p class="mt-2 text-sm text-red-600" v-if="form.errors.description" v-text="form.errors.description"></p>
+                                        <p class="mt-2 text-sm text-red-600" v-if="errors.description">{{ errors.description }}</p>
                                     </div>
                                     <div class="col-span-6">
                                         <label for="label" class="block text-sm font-medium text-gray-700">Label</label>
                                         <input type="text" v-model="form.label" id="label" name="label" autocomplete="label"
                                             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                        <p class="mt-2 text-sm text-red-600" v-if="form.errors.label" v-text="form.errors.label"></p>
+                                        <p class="mt-2 text-sm text-red-600" v-if="errors.label">{{ errors.label }}</p>
                                     </div>
                                 </div>
                             </div>

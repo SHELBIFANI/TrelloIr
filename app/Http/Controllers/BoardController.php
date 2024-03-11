@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Board;
 use App\Http\Requests\StoreBoardRequest;
 use App\Http\Requests\UpdateBoardRequest;
+use App\Models\Lable;
 use Inertia\Inertia;
 
 class BoardController extends Controller
@@ -22,6 +23,8 @@ class BoardController extends Controller
      */
     public function create()
     {
+        $lable = Lable::all();
+
         return Inertia::render('Board/Create');
     }
 
@@ -29,7 +32,7 @@ class BoardController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(StoreBoardRequest $request)
-    {
+    {  
         dd($request->input());
     }
 
