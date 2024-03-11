@@ -36,7 +36,7 @@ const submit = () => {
                         <InputLabel for="name" value="Name" class="ml-6"/>
 
                         <div class="flex justify-center">
-                            <TextInput id="name" type="text" class="w-11/12 mt-1 block" v-model="form.name" required autofocus
+                            <TextInput id="name" type="text" class="w-11/12 mt-1 block" v-model="form.name" required autofocus placeholder="Enter Your Name"
                             autocomplete="name" />
                         </div>
 
@@ -47,7 +47,7 @@ const submit = () => {
                         <InputLabel for="email" value="Email" class="ml-6"/>
 
                         <div class="flex justify-center">
-                            <TextInput id="email" type="email" class="w-11/12 mt-1 block" v-model="form.email" required
+                            <TextInput id="email" type="email" class="w-11/12 mt-1 block" v-model="form.email" required placeholder="Enter Your Email"
                             autocomplete="username" />
                         </div>
 
@@ -58,7 +58,7 @@ const submit = () => {
                         <InputLabel for="password" value="Password" class="ml-6"/>
 
                         <div class="flex justify-center">
-                            <TextInput id="password" type="password" class="mt-1 block w-11/12" v-model="form.password" required
+                            <TextInput id="password" type="password" class="mt-1 block w-11/12" v-model="form.password" required placeholder="Enter Your Password"
                             autocomplete="new-password" />
                         </div>
 
@@ -69,7 +69,7 @@ const submit = () => {
                         <InputLabel for="password_confirmation" value="Confirm Password" class="ml-6"/>
 
                         <div class="flex justify-center">
-                            <TextInput id="password_confirmation" type="password" class="mt-1 block w-11/12"
+                            <TextInput id="password_confirmation" type="password" class="mt-1 block w-11/12" placeholder="Enter Your Password Again"
                             v-model="form.password_confirmation" required autocomplete="new-password" />
                         </div>
 

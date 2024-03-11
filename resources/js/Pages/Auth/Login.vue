@@ -52,7 +52,7 @@ const submit = () => {
                 <form @submit.prevent="submit">
                     <div class="ml-5 mr-5 mt-8">
                         <InputLabel for="email" value="Email" class="ml-2" />
-                        <TextInput id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autofocus
+                        <TextInput id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autofocus placeholder="Enter Your Email"
                             autocomplete />
                         <InputError class="mt-2" :message="form.errors.email" />
                     </div>

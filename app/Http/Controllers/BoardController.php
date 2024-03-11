@@ -23,7 +23,6 @@ class BoardController extends Controller
      */
     public function create()
     {
-        $lable = Lable::all();
 
         return Inertia::render('Board/Create');
     }
