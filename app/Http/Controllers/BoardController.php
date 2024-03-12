@@ -6,6 +6,7 @@ use App\Models\Board;
 use App\Http\Requests\StoreBoardRequest;
 use App\Http\Requests\UpdateBoardRequest;
 use App\Models\Lable;
+use App\Repositories\LabelRepo;
 use Inertia\Inertia;
 
 class BoardController extends Controller
@@ -24,7 +25,9 @@ class BoardController extends Controller
     public function create()
     {
 
-        return Inertia::render('Board/Create');
+        return Inertia::render('Board/Create',
+            [
+            ]);
     }
 
     /**

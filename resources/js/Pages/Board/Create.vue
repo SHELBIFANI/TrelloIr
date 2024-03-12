@@ -5,16 +5,20 @@ import { reactive } from 'vue'
 import { router } from '@inertiajs/vue3'
 import { defineProps } from 'vue';
 
+const props = defineProps({
+    errors: Object,
+    labels: Object
+})
+
 const form = reactive({
     name: null,
     description: null,
-    label: null,
+    label: props.labels[0].id,
     errors: {}
 })
+    
 
-const props = defineProps({
-    errors: Object
-})
+console.log(props.labels);
 
 function submit() {
     router.post(route('boards.store'), form)
@@ -54,8 +58,14 @@ function submit() {
                                     </div>
                                     <div class="col-span-6">
                                         <label for="label" class="block text-sm font-medium text-gray-700">Label</label>
-                                        <input type="text" v-model="form.label" id="label" name="label" autocomplete="label"
+                                        <!-- <input type="text" v-model="form.label" id="label" name="label" autocomplete="label"
+                                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"> -->
+                                        <select id="label" name="label" v-model="form.label"
                                             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                <!-- <option value="" disabled selected>Select a label</option> -->
+                                                <option :value="label.id" :key="label.id" v-for="(label, index) in labels">{{ label.title }}
+                                                </option>
+                                        </select>
                                         <p class="mt-2 text-sm text-red-600" v-if="errors.label">{{ errors.label }}</p>
                                     </div>
                                 </div>
@@ -72,30 +82,3 @@ function submit() {
         </form>
     </div>
 </template>
-
-<!-- <script setup>
-import { reactive } from 'vue'
-import { router } from '@inertiajs/vue3'
-
-const form = reactive({
-  first_name: null,
-  last_name: null,
-  email: null,
-})
-
-function submit() {
-    router.post(route('boards.store'), form)
-}
-</script>
-
-<template>
-  <form @submit.prevent="submit">
-    <label for="first_name">First name:</label>
-    <input id="first_name" v-model="form.first_name" />
-    <label for="last_name">Last name:</label>
-    <input id="last_name" v-model="form.last_name" />
-    <label for="email">Email:</label>
-    <input id="email" v-model="form.email" />
-    <button type="submit">Submit</button>
-  </form>
-</template> -->

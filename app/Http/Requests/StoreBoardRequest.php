@@ -26,7 +26,7 @@ class StoreBoardRequest extends FormRequest
         return [
             'name' => 'required|string|min:5|max:255',
             'description' => 'nullable|string|min:10|max:255',
-            'label' => ['required', Rule::enum(label::class)]
+            'label' => 'required|numeric|exists:labels,id',
         ];
     }
 }
